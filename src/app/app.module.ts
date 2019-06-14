@@ -12,7 +12,7 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 // Rutas
-import { ROUTES } from './app.routes';
+import { AppRoutingModule } from './app.routes';
 
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
@@ -36,7 +36,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
