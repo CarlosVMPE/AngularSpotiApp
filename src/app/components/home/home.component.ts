@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { SpotifyService } from "src/app/services/spotify.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-home",
@@ -11,7 +12,7 @@ export class HomeComponent {
   error: boolean;
   mensajeError: string;
 
-  constructor(private spotify: SpotifyService) {
+  constructor(private spotify: SpotifyService, private router: Router) {
     this.loading = true;
     this.error = false;
 
@@ -26,6 +27,7 @@ export class HomeComponent {
         },
         errorServicio => {
           spotify.getToken();
+          this.router.navigate(['/home']);
         }
       );
     }, 1500);
