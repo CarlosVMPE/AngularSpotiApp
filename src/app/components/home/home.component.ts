@@ -22,10 +22,10 @@ export class HomeComponent {
           //console.log(data);
         },
         errorServicio => {
-          console.log(errorServicio);
+          //console.log(errorServicio);
           location.reload();
         }
       );
-    }, 1500);
+    }, 1000);
   }
 }
